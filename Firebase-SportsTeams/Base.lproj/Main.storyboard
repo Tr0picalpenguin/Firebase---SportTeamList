@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOl-JV-gdo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Team List Table View Controller-->
+        <scene sceneID="f7P-uK-yck">
+            <objects>
+                <tableViewController id="ety-Aq-QNA" customClass="TeamListTableViewController" customModule="Firebase_SportsTeams" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AGV-EB-YJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="85" id="EKF-q6-i9h" customClass="TeamTableViewCell" customModule="Firebase_SportsTeams" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EKF-q6-i9h" id="bWB-5n-8oB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(team name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7m-Qh-ePo">
+                                            <rect key="frame" x="70" y="13" width="274" height="59"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="d7m-Qh-ePo" firstAttribute="leading" secondItem="bWB-5n-8oB" secondAttribute="leadingMargin" constant="50" id="8pC-98-1Mr"/>
+                                        <constraint firstItem="d7m-Qh-ePo" firstAttribute="top" secondItem="bWB-5n-8oB" secondAttribute="topMargin" constant="2" id="JSm-i1-QEY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="d7m-Qh-ePo" secondAttribute="trailing" constant="50" id="Msf-09-Gkh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="d7m-Qh-ePo" secondAttribute="bottom" constant="2" id="mxV-UO-cz9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="d7m-Qh-ePo" firstAttribute="centerY" secondItem="EKF-q6-i9h" secondAttribute="centerY" id="KGl-eT-ViN"/>
+                                    <constraint firstItem="d7m-Qh-ePo" firstAttribute="centerX" secondItem="EKF-q6-i9h" secondAttribute="centerX" id="QhD-LY-196"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="teamNameLabel" destination="d7m-Qh-ePo" id="js5-MC-awI"/>
+                                    <segue destination="6n5-hp-cZG" kind="show" identifier="toDetailVC" id="JTo-SQ-J5H"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ety-Aq-QNA" id="3vQ-w0-bvB"/>
+                            <outlet property="delegate" destination="ety-Aq-QNA" id="Xds-Ta-5lL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FYU-re-Hep">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rry-tq-BB7">
+                            <connections>
+                                <segue destination="6n5-hp-cZG" kind="show" id="B1W-r2-lKQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAP-dM-1RW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971.01449275362324" y="96.428571428571431"/>
+        </scene>
+        <!--Team Detail View Controller-->
+        <scene sceneID="zja-sj-hUd">
+            <objects>
+                <viewController id="6n5-hp-cZG" customClass="TeamDetailViewController" customModule="Firebase_SportsTeams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AUW-ZM-WdM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="Hh9-ou-abJ">
+                                <rect key="frame" x="149" y="431" width="116.5" height="244"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymn-1X-2NZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CG5-6K-Hfu">
+                                        <rect key="frame" x="0.0" y="105" width="116.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sport..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-Q3-FKE">
+                                        <rect key="frame" x="0.0" y="210" width="116.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HRJ-Nx-hMD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hh9-ou-abJ" firstAttribute="centerX" secondItem="HRJ-Nx-hMD" secondAttribute="centerX" id="QRf-5x-kdf"/>
+                            <constraint firstItem="HRJ-Nx-hMD" firstAttribute="bottom" secondItem="Hh9-ou-abJ" secondAttribute="bottom" constant="187" id="vpd-Ds-zrv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2IJ-Dh-ZZa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kxh-AW-RSS">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="6n5-hp-cZG" id="wXd-dh-cBc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="locationTextField" destination="CG5-6K-Hfu" id="yse-TK-RM1"/>
+                        <outlet property="nameTextField" destination="Ymn-1X-2NZ" id="dlt-dl-Ye0"/>
+                        <outlet property="sportTypeTextField" destination="uEA-Q3-FKE" id="PzZ-CX-UZR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4i1-Jn-xeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="96"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4bc-bT-apZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dOl-JV-gdo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0V6-dH-wCt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ety-Aq-QNA" kind="relationship" relationship="rootViewController" id="95m-4r-Zqm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZD-4I-N6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="96.428571428571431"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JTo-SQ-J5H"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
