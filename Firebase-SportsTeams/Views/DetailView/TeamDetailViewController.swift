@@ -9,6 +9,8 @@ import UIKit
 
 class TeamDetailViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var sportTypeTextField: UITextField!
@@ -17,8 +19,7 @@ class TeamDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -36,6 +37,9 @@ class TeamDetailViewController: UIViewController {
         nameTextField.text = team.name
         locationTextField.text = team.location
         sportTypeTextField.text = team.sport
-    }
-
+//        imageView.image = UIImage(named: team.sportImage)
+        }
+  
+    
+ 
 }

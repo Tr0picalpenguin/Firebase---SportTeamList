@@ -13,18 +13,18 @@ class TeamListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        viewModel = TeamListTableViewModel(delegate: self)
     }
 
     // MARK: - Table view data source
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.loadData()
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.teams.count
+    }
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as? TeamTableViewCell else { return UITableViewCell() }
@@ -39,19 +39,12 @@ class TeamListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            viewModel.delete(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
    
-
-   
-
-    
     // MARK: - Navigation
-
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
@@ -63,5 +56,11 @@ class TeamListTableViewController: UITableViewController {
         } else {
             destination.viewModel = TeamDetailViewModel()
         }
+    }
+}
+
+extension TeamListTableViewController: TeamListTableViewModelDelegate {
+    func teamsLoadedSuccessfully() {
+        tableView.reloadData()
     }
 }

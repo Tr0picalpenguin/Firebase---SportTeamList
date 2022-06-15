@@ -16,7 +16,7 @@
 		EDB0D0BD2857A7D500772872 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB0D0BC2857A7D500772872 /* FirebaseDatabaseSwift */; };
 		EDB0D0C22857A91400772872 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0C12857A91400772872 /* Team.swift */; };
 		EDB0D0C62857AFAC00772872 /* TeamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0C52857AFAC00772872 /* TeamDetailViewModel.swift */; };
-		EDB0D0C82857B0BC00772872 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0C72857B0BC00772872 /* NetworkController.swift */; };
+		EDB0D0C82857B0BC00772872 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0C72857B0BC00772872 /* FirebaseService.swift */; };
 		EDB0D0CA2857B28300772872 /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0C92857B28300772872 /* TeamDetailViewController.swift */; };
 		EDB0D0CC2857B6FA00772872 /* TeamListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0CB2857B6FA00772872 /* TeamListTableViewController.swift */; };
 		EDB0D0CE2857B71100772872 /* TeamListTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB0D0CD2857B71100772872 /* TeamListTableViewModel.swift */; };
@@ -34,7 +34,7 @@
 		EDB0D0B02857A6AE00772872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB0D0C12857A91400772872 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		EDB0D0C52857AFAC00772872 /* TeamDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewModel.swift; sourceTree = "<group>"; };
-		EDB0D0C72857B0BC00772872 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		EDB0D0C72857B0BC00772872 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		EDB0D0C92857B28300772872 /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		EDB0D0CB2857B6FA00772872 /* TeamListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewController.swift; sourceTree = "<group>"; };
 		EDB0D0CD2857B71100772872 /* TeamListTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewModel.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		EDB0D0BF2857A8D900772872 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
-				EDB0D0C72857B0BC00772872 /* NetworkController.swift */,
+				EDB0D0C72857B0BC00772872 /* FirebaseService.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB0D0C82857B0BC00772872 /* NetworkController.swift in Sources */,
+				EDB0D0C82857B0BC00772872 /* FirebaseService.swift in Sources */,
 				EDB0D0C22857A91400772872 /* Team.swift in Sources */,
 				EDB0D0A32857A6AC00772872 /* AppDelegate.swift in Sources */,
 				EDB0D0C62857AFAC00772872 /* TeamDetailViewModel.swift in Sources */,

@@ -10,9 +10,11 @@ import Foundation
 class TeamDetailViewModel {
     
     var team: Team?
+    private let service: FirebaseSyncable
     
-    init(team: Team? = nil) {
+    init(team: Team? = nil, firebaseService: FirebaseSyncable = FirebaseService()) {
         self.team = team
+        self.service = firebaseService
     }
    
     
@@ -20,21 +22,17 @@ class TeamDetailViewModel {
         if team != nil {
             updateTeam(sport: sport, name: name, location: location)
         } else {
-            team = Team(sport: sport, name: name, location: location)
-            NetworkController().update(team: team!)
+            let team = Team(sport: sport, name: name, location: location)
+            service.save(team)
         }
     }
     
     func updateTeam(sport: String, name: String, location: String) {
         
-        if let team = team {
+        guard let team = team else { return }
             team.sport = sport
             team.name = name
             team.location = location
-        } else {
-            team = Team(sport: sport, name: name, location: location)
-        }
-        NetworkController().update(team: team!)
     }
     
 }
